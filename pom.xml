@@ -6,7 +6,7 @@
     <name>Shiro integration for Mule</name>
     
     <properties>
-        <mule.version>3.2.0</mule.version>
+        <mule.version>3.3.0</mule.version>
     </properties>
     
     <dependencies>
@@ -33,8 +33,8 @@
         </dependency>
          <dependency>
             <groupId>org.apache.geronimo.specs</groupId>
-            <artifactId>geronimo-servlet_2.4_spec</artifactId>
-            <version>1.1-osgi</version>
+            <artifactId>geronimo-servlet_3.0_spec</artifactId>
+            <version>1.0</version>
             <scope>provided</scope>
         </dependency>
 
@@ -81,4 +81,11 @@
             <uniqueVersion>false</uniqueVersion>
         </snapshotRepository>
     </distributionManagement>
+    <repositories>
+		<repository>
+			<id>mulesoft-releases</id>
+			<name>MuleSoft Releases</name>
+			<url>http://repository.mulesoft.org/releases/</url>
+		</repository>
+    </repositories>
 </project>
