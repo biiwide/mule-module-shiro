@@ -6,19 +6,20 @@
     <name>Shiro integration for Mule</name>
     
     <properties>
-        <mule.version>3.3.0</mule.version>
+        <mule.version>3.3.1</mule.version>
+        <shiro.version>1.2.1</shiro.version>
     </properties>
     
     <dependencies>
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-core</artifactId>
-            <version>1.1.0</version>
+            <version>${shiro.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-spring</artifactId>
-            <version>1.1.0</version>
+            <version>${shiro.version}</version>
         </dependency>
         <dependency>
             <groupId>org.mule</groupId>
@@ -64,23 +65,20 @@
         </extensions>
     </build>
     <scm>
-        <connection>scm:git:git://github.com:mulesoft/mule-module-shiro.git</connection>
-        <developerConnection>scm:git:git@github.com:mulesoft/mule-module-shiro.git</developerConnection>
-        <url>http://github.com/mulesoft/mule-module-shiro</url>
+        <connection>scm:git:git://github.com:biiwide/mule-module-shiro.git</connection>
+        <developerConnection>scm:git:git@github.com:biiwide/mule-module-shiro.git</developerConnection>
+        <url>http://github.com/biiwide/mule-module-shiro</url>
     </scm>
-    <distributionManagement>
-        <repository>
-            <id>mulesoft.releases</id>
-            <name>Muleforge Releases Repository</name>
-            <url>https://repository.mulesoft.org/releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>mulesoft.snapshots</id>
-            <name>Muleforge Snapshots Repository</name>
-            <url>https://repository.mulesoft.org/snapshots/</url>
-            <uniqueVersion>false</uniqueVersion>
-        </snapshotRepository>
-    </distributionManagement>
+	<distributionManagement>
+		<repository>
+			<id>repo</id>
+			<url>https://github.com/biiwide/biiwide-mvn-repo/raw/master/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshot-repo</id>
+			<url>https://github.com/biiwide/biiwide-mvn-repo/raw/master/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
     <repositories>
 		<repository>
 			<id>mulesoft-releases</id>
