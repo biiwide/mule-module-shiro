@@ -1,1 +1,2 @@
-http\://www.mulesoft.org/schema/mule/shiro/3.2/mule-shiro.xsd=META-INF/mule-shiro.xsd
+http\://www.mulesoft.org/schema/mule/shiro/3.3/mule-shiro.xsd=META-INF/mule-shiro.xsd
+http\://www.mulesoft.org/schema/mule/shiro/current/mule-shiro.xsd=META-INF/mule-shiro.xsd
