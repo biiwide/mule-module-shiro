@@ -18,10 +18,11 @@ import org.apache.shiro.authc.AuthenticationToken;
 
 public class ShiroAuthentication implements Authentication
 {
+	private static final long serialVersionUID = 5423804057732463878L;
 
-    private final AuthenticationToken token;
+	private final AuthenticationToken token;
     private boolean authenticated;
-    private Map properties;
+    private Map<String,Object> properties;
     private final MuleEvent event;
 
     public ShiroAuthentication(AuthenticationToken token, MuleEvent event)
@@ -29,7 +30,7 @@ public class ShiroAuthentication implements Authentication
         this(token, null, event);
     }
     
-    public ShiroAuthentication(AuthenticationToken token, Map properties, MuleEvent event)
+    public ShiroAuthentication(AuthenticationToken token, Map<String,Object> properties, MuleEvent event)
     {
         this.token = token;
         this.properties = properties;
@@ -61,12 +62,12 @@ public class ShiroAuthentication implements Authentication
         return token.getPrincipal();
     }
 
-    public Map getProperties()
+    public Map<String,Object> getProperties()
     {
         return properties;
     }
 
-    public void setProperties(Map properties)
+    public void setProperties(Map<String,Object> properties)
     {
         this.properties = properties;
     }

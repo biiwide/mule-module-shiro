@@ -18,10 +18,11 @@ import org.apache.shiro.subject.Subject;
 
 public class ShiroAuthenticationResult implements Authentication
 {
+	private static final long serialVersionUID = -4007028153583360863L;
 
-    private transient final Subject subject;
+	private transient final Subject subject;
     private boolean authenticated;
-    private Map properties;
+    private Map<String,Object> properties;
     private transient final MuleEvent event;
 
     public ShiroAuthenticationResult(Subject subject, MuleEvent event)
@@ -29,7 +30,7 @@ public class ShiroAuthenticationResult implements Authentication
         this(subject, null, event);
     }
     
-    public ShiroAuthenticationResult(Subject subject, Map properties, MuleEvent event)
+    public ShiroAuthenticationResult(Subject subject, Map<String,Object> properties, MuleEvent event)
     {
         this.subject = subject;
         this.properties = properties;
@@ -56,12 +57,12 @@ public class ShiroAuthenticationResult implements Authentication
         return subject.getPrincipals();
     }
 
-    public Map getProperties()
+    public Map<String,Object> getProperties()
     {
         return properties;
     }
 
-    public void setProperties(Map properties)
+    public void setProperties(Map<String,Object> properties)
     {
         this.properties = properties;
     }
