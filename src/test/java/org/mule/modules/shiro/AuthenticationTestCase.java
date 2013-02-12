@@ -10,6 +10,10 @@
 
 package org.mule.modules.shiro;
 
+import static org.junit.Assert.*;
+
+import org.junit.Ignore;
+import org.junit.Test;
 import org.mule.transport.http.HttpConstants;
 
 import org.apache.commons.httpclient.HttpClient;
@@ -23,6 +27,7 @@ public class AuthenticationTestCase extends AbstractShiroTestCase
         return "authentication-config.xml";
     }
 
+    @Test
     public void testAuthenticationFailureNoContext() throws Exception
     {
         HttpClient client = new HttpClient();
@@ -43,6 +48,7 @@ public class AuthenticationTestCase extends AbstractShiroTestCase
         }
     }
 
+    @Test
     public void testAuthenticationFailureBadCredentials() throws Exception
     {
         doRequest(null, "localhost", "anonX", "anonX", getUrl(), true, false, 401);
@@ -53,21 +59,26 @@ public class AuthenticationTestCase extends AbstractShiroTestCase
         return "http://localhost:4567/index.html";
     }
 
+    @Test
     public void testAuthenticationAuthorised() throws Exception
     {
         doRequest(null, "localhost", "anon", "anon", getUrl(), false, true, 200);
     }
 
+    @Test
     public void testAuthenticationAuthorisedWithHandshake() throws Exception
     {
         doRequest(null, "localhost", "anon", "anon", getUrl(), true, false, 200);
     }
 
+    @Test
+    @Ignore
     public void xtestAuthenticationAuthorisedWithHandshakeAndBadRealm() throws Exception
     {
         doRequest("blah", "localhost", "anon", "anon", getUrl(), true, false, 401);
     }
 
+    @Test
     public void testAuthenticationAuthorisedWithHandshakeAndRealm() throws Exception
     {
         doRequest("mule-realm", "localhost", "ross", "ross", getUrl(), true, false, 200);

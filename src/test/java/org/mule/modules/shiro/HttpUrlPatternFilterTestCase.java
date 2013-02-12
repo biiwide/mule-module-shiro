@@ -10,6 +10,8 @@
 
 package org.mule.modules.shiro;
 
+import org.junit.Test;
+
 
 public class HttpUrlPatternFilterTestCase extends AbstractShiroTestCase
 {
@@ -19,12 +21,14 @@ public class HttpUrlPatternFilterTestCase extends AbstractShiroTestCase
         return "http-url-pattern-filter-config.xml";
     }
 
+    @Test
     public void testUnauthroizedUser() throws Exception
     {
         doRequest("mule-realm", "localhost", "user", "password", "http://localhost:4567/permissions/auth", true, true, 405);
         doRequest("mule-realm", "localhost", "user", "password", "http://localhost:4567/roles/auth", true, true, 405);
     }
 
+    @Test
     public void testAuthroizedUser() throws Exception
     {
         doRequest("mule-realm", "localhost", "administrator", "password", "http://localhost:4567/permissions/auth", true, true, 200);

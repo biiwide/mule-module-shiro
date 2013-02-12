@@ -9,7 +9,9 @@
  */
 package org.mule.modules.shiro;
 
-import org.mule.tck.FunctionalTestCase;
+import static org.junit.Assert.*;
+
+import org.mule.tck.junit4.FunctionalTestCase;
 import org.mule.transport.http.HttpConstants;
 
 import org.apache.commons.httpclient.HttpClient;
